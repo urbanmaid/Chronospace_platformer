@@ -19,7 +19,8 @@ public class Player : MonoBehaviour, IGravityControl
     public float timeScaleMultiplier = 0.005f; // 시간 계수. 거의 멈춤 
     public Transform itemPointTransform; // 탬 생성 위치
     public PlayerTimer timer;
-    public Vector3 respawnPosition; // 리스폰 위치 
+    public Vector3 respawnPosition; // 리스폰 위치
+    public Vector3 respawnPositionOrignal; // 리스폰 위치 
 
     [Header("UI")] //플레이어 외부 컴포넌트 변수
     public CamController camController; // CamController 참조
@@ -100,8 +101,9 @@ public class Player : MonoBehaviour, IGravityControl
 
         // Set this as the instance and ensure it persists across scenes
         Instance = this;
-        DontDestroyOnLoad(this.gameObject);
 
+        respawnPositionOrignal = respawnPosition;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     #endregion
@@ -367,7 +369,8 @@ public class Player : MonoBehaviour, IGravityControl
 
     public void SetCheckpoint(Vector3 checkpointPosition)
     {
-        respawnPosition = checkpointPosition;
+        respawnPosition = checkpointPosition + respawnPositionOrignal;
+        Debug.Log(respawnPosition + " has set to new Spawning Location");
     }
 
     void Interaction() //아이템 줍기
@@ -580,6 +583,17 @@ public class Player : MonoBehaviour, IGravityControl
             camController.ShakeCam();
             StartCoroutine(UIManager.instance.DmgFX());
         }
+
+        /*
+        if (other.CompareTag("CheckPoint"))
+        {
+            respawnPosition = other.transform.position;
+
+            timer.SetCheckPointTime();
+
+            Debug.Log("Checkpoint reached: " + respawnPosition);
+        }
+        */
     }
 
     private void OnTriggerStay(Collider other) 
@@ -609,15 +623,6 @@ public class Player : MonoBehaviour, IGravityControl
                 camController.ShakeCam();
                 StartCoroutine(UIManager.instance.DmgFX());
             }
-        }
-
-        if (other.CompareTag("CheckPoint"))
-        {
-            respawnPosition = other.transform.position;
-
-            timer.SetCheckPointTime();
-
-            Debug.Log("Checkpoint reached: " + respawnPosition);
         }
     }
 
