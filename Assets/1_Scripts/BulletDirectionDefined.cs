@@ -50,7 +50,7 @@ public class BulletDirectionDefined : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!other.CompareTag("Enemy")){
+        if(!other.CompareTag("Enemy") && !other.CompareTag("Bullet")){
             if(other.CompareTag("Player")){
                 Debug.Log("총알이 플레이어에 닿았기 때문에 사라졌습니다");
             }
