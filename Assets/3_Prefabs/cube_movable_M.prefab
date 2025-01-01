@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2377773533475676095}
-  m_Mesh: {fileID: -2988143930948128192, guid: 21798186390ce1d46b3382b5325397cd, type: 3}
+  m_Mesh: {fileID: -3226932258480928802, guid: 21798186390ce1d46b3382b5325397cd, type: 3}
 --- !u!23 &2961335244483259126
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -95,11 +95,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1, y: 1, z: 1}
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.5}
   m_TimeToStationary: 0.5
 --- !u!1 &4739690057312797906
 GameObject:
@@ -114,9 +114,9 @@ GameObject:
   - component: {fileID: 4739690057312797917}
   - component: {fileID: 4739690057312797913}
   - component: {fileID: 4739690057312797912}
-  - component: {fileID: 6802960209159341599}
+  - component: {fileID: 1064158748}
   m_Layer: 0
-  m_Name: cube_movable_L
+  m_Name: cube_movable_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,8 +157,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!143 &4739690057312797913
 CharacterController:
   m_ObjectHideFlags: 0
@@ -171,12 +171,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 1
+  m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &4739690057312797912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
   savedTimeScale: 1
   forceSavedVector: {x: 0, y: 0, z: 0}
   hadTouchWhenTimeStopped: 0
---- !u!65 &6802960209159341599
+--- !u!65 &1064158748
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,5 +205,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2, z: 2.5}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 1.5, y: 1, z: 1.5}
+  m_Center: {x: 0, y: 0.5, z: 0}

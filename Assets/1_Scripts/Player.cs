@@ -468,6 +468,7 @@ public class Player : MonoBehaviour, IGravityControl
                 
                 StartCoroutine(TweakTimeEffect(timeScaleMultiplier, 5));
                 Debug.Log("Time speed has changed into " + timeScaleMultiplier + "x.");
+                Debug.Log("Actual Time speed has changed into " + Time.timeScale + "x.");
                 AudioManager.instance.PlaySfx(AudioManager.SFX.SFX_ItemUseSound);
 
                 break;
