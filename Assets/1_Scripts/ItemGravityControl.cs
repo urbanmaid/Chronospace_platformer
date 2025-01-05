@@ -1,3 +1,4 @@
+using Cinemachine.Utility;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -49,9 +50,13 @@ public class ItemGravityControl : MonoBehaviour, IGravityControl
     {
         if(hadTouchWhenTimeStopped && (Time.timeScale > 0.98)){ 
             // 시간 멈춤 적용 뒤 멈췄을 때 준 물리량을 그대로 가져감
-            Debug.Log("Somebody touched this object when time stopped");
             hadTouchWhenTimeStopped = false;
             controller.Move(forceSavedVector * -60f * Time.deltaTime);
+        }
+        else if((controller.velocity.magnitude <= 0.05f) && (Time.timeScale > 0.98)){
+            //더 이상 움직임일 수 있는 공간이 없어서 멈춰져야 할 경우 호출
+            gravityVector = new Vector3(0f, Gravity, 0f);
+            hadTouchWhenTimeStopped = false;
         }
         else{ 
             // 평상시
@@ -76,7 +81,7 @@ public class ItemGravityControl : MonoBehaviour, IGravityControl
     private void OnTriggerEnter(Collider other){
         if(other.tag == "Player"){
             if((1.02 < Time.timeScale) || (Time.timeScale < 0.98)){
-                forceSavedVector = other.transform.position - transform.position - new Vector3(0f, -0.25f, 0f);
+                forceSavedVector = other.transform.position - transform.position - new Vector3(0f, 0.4f, 0f);
                 savedTimeScale = Time.timeScale;
                 hadTouchWhenTimeStopped = true;
                 Debug.Log("Relative Position: " + forceSavedVector);

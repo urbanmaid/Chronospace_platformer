@@ -91,7 +91,8 @@ public class InteractionObject : StageMechanicsController
             targetObjects[i].transform.DOScale(originalScale[i], duration);
         }
 
-        selfMeshLight.SetActive(false);
+        if(selfMeshLight) selfMeshLight.SetActive(false);
+        
         for (int i = 0; i<selfMesh.Length; i++){
             if(selfRecoloredMaterialsGlow[i] != -1) {
                 meshRenderer = selfMesh[i].GetComponent<MeshRenderer>();
