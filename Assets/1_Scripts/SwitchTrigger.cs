@@ -15,6 +15,7 @@ public class SwitchTrigger : MonoBehaviour
     [Header("Timer")]
     public bool hasTimer = false;
     public float timerValue = 5f;
+    public float delayValue = 0f;
 
     [Header("Material Changes")]
     public Color selfColor;
@@ -53,9 +54,26 @@ public class SwitchTrigger : MonoBehaviour
     {
         AudioManager.instance.PlaySfx(AudioManager.SFX.SFX_SwitchPressed);
 
+        if(!activated){
+            OnSelfMesh();
+        }
+        else{
+            OffSelfMesh();
+        }
+
+        // delayValue만큼 대기 후 다음 작업 수행하기
+        StartCoroutine(ActivateAfterDelay());
+    }
+
+    private IEnumerator ActivateAfterDelay()
+    {
+        // delayValue만큼 대기
+        yield return new WaitForSeconds(delayValue);
+
         if (!activated)
         {
             OnSwitchController();
+
             /*if(hasTimer)
             {
                 Invoke("OffSwitchController", timerValue);
@@ -65,6 +83,32 @@ public class SwitchTrigger : MonoBehaviour
         {
             OffSwitchController();
         }
+    }
+
+    private void OnSelfMesh(){
+        foreach (int index in selfRecoloredMaterialsGlow)
+        {
+            if (index >= 0 && index < originalMaterials.Length)
+            {
+                originalMaterials[index] = newGlowMaterial;
+            }
+        }
+        //originalMaterialsTarget[selfRecoloredMaterialsGlowTarget] = newGlowMaterial;
+        meshRenderer.sharedMaterials = originalMaterials;
+        selfMeshLight.SetActive(true);
+    }
+
+    private void OffSelfMesh(){
+        foreach (int index in selfRecoloredMaterialsGlow)
+        {
+            if (index >= 0 && index < originalMaterials.Length)
+            {
+                originalMaterials[index] = newMaterial;
+            }
+        }
+        //originalMaterialsTarget[recoloredMaterialsGlowTarget] = newMaterial;
+        meshRenderer.sharedMaterials = originalMaterials;
+        selfMeshLight.SetActive(false);
     }
 
     private void OnSwitchController()
@@ -85,17 +129,6 @@ public class SwitchTrigger : MonoBehaviour
                 tObj.Trigger();
             }
         }
-
-        foreach (int index in selfRecoloredMaterialsGlow)
-        {
-            if (index >= 0 && index < originalMaterials.Length)
-            {
-                originalMaterials[index] = newGlowMaterial;
-            }
-        }
-        //originalMaterialsTarget[selfRecoloredMaterialsGlowTarget] = newGlowMaterial;
-        meshRenderer.sharedMaterials = originalMaterials;
-        selfMeshLight.SetActive(true);
         
         //스위치 작동 활성화 기록
         activated = true;
@@ -120,17 +153,6 @@ public class SwitchTrigger : MonoBehaviour
                 tObj.Exit();
             }
         }
-        
-        foreach (int index in selfRecoloredMaterialsGlow)
-        {
-            if (index >= 0 && index < originalMaterials.Length)
-            {
-                originalMaterials[index] = newMaterial;
-            }
-        }
-        //originalMaterialsTarget[recoloredMaterialsGlowTarget] = newMaterial;
-        meshRenderer.sharedMaterials = originalMaterials;
-        selfMeshLight.SetActive(false);
         
         // Other actions when deactivated
         activated = false;

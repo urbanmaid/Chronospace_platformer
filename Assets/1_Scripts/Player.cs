@@ -71,7 +71,7 @@ public class Player : MonoBehaviour, IGravityControl
     public GameObject equipItem; // 현재 손에 들고있는 아이템 
     public int equipItemIndex = -1; // 현재 선택된 템 번호 
     
-    public float shieldDuration = 8f;
+    public float shieldDuration = 12f;
 
     // 아이템 습득 UI 관련  
     public TextMeshProUGUI interactionText; // interaction 안내 UI 
@@ -475,12 +475,12 @@ public class Player : MonoBehaviour, IGravityControl
 
             case Item.Type.Shield:
 
+                Debug.Log("Using shield now");
                 timer.isPlaying = false;
                 isInShield = true;
-                StartCoroutine(WaitAndExecute(shieldDuration));
-                isInShield = false;
-                timer.isPlaying = true;
                 AudioManager.instance.PlaySfx(AudioManager.SFX.SFX_ItemUseSound);
+
+                StartCoroutine(WaitAndExecute(shieldDuration));
 
                 break;
 
@@ -671,6 +671,9 @@ public class Player : MonoBehaviour, IGravityControl
     private IEnumerator WaitAndExecute(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
+
+        Debug.Log("Stopped using shield");
+        isInShield = false;
         timer.isPlaying = true;
     }
 
