@@ -51,7 +51,7 @@ public class ItemGravityControl : MonoBehaviour, IGravityControl
         if(hadTouchWhenTimeStopped && (Time.timeScale > 0.98)){ 
             // 시간 멈춤 적용 뒤 멈췄을 때 준 물리량을 그대로 가져감
             hadTouchWhenTimeStopped = false;
-            controller.Move(forceSavedVector * -60f * Time.deltaTime);
+            controller.Move(forceSavedVector * -50f * Time.deltaTime);
         }
         else if((controller.velocity.magnitude <= 0.05f) && (Time.timeScale > 0.98)){
             //더 이상 움직임일 수 있는 공간이 없어서 멈춰져야 할 경우 호출

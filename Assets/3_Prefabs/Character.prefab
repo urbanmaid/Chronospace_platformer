@@ -1879,6 +1879,7 @@ MonoBehaviour:
   itemPointTransform: {fileID: 0}
   timer: {fileID: 5360781343035164255}
   respawnPosition: {x: 0, y: 1.3, z: 0}
+  respawnPositionOrignal: {x: 0, y: 0, z: 0}
   camController: {fileID: 0}
   damageFX: {fileID: 0}
   jumpForce: 8
