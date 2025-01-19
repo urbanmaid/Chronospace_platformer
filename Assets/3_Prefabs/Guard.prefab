@@ -73,7 +73,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84e702ef71aa694985e620e15dc577a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerDetected: 0
+  isDetected: 0
+  target: Player
   nearestPlayer: {fileID: 0}
 --- !u!1 &621278534067018043
 GameObject:
@@ -386,6 +387,7 @@ MonoBehaviour:
   travelDistance: 2.5
   chaseRange: 10
   chaseRangeErratum: 1
+  chaseRangeExtension: 2.25
   patrolDelay: 2
   detectionRangeObj: {fileID: 594351123460640692}
   detectionInterval: 0.5
