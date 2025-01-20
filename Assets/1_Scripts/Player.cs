@@ -15,7 +15,8 @@ public class Player : MonoBehaviour, IGravityControl
     public CharacterController controller; // 이건  IGravityControl 에 있음 
     public GameObject windKey; // 내 태엽
     public GameObject[] gravityPrefebs;  // 던질 중력반전, // 던질 중력장
-    public float duration = 6f;  
+    public float duration = 6f;
+    public float windupDuration = 120f;  
     public float timeScaleMultiplier = 0.005f; // 시간 계수. 거의 멈춤 
     public Transform itemPointTransform; // 탬 생성 위치
     public PlayerTimer timer;
@@ -485,7 +486,7 @@ public class Player : MonoBehaviour, IGravityControl
                 break;
 
             case Item.Type.WindKey: //윈드 키
-                timer.TimeChange(30f); // 30초 추가 
+                timer.TimeChange(windupDuration); // 30초 추가 
                 AudioManager.instance.PlaySfx(AudioManager.SFX.SFX_ItemUseSound);
                 break;
 
