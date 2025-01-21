@@ -2,14 +2,17 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M Jatoba Billboard URP
   m_Shader: {fileID: 4800000, guid: 59fc58d427ab6cd4fb9c8a56b4cfa24e, type: 3}
-  m_ShaderKeywords: _EMISSION _NORMALMAP
+  m_ValidKeywords:
+  - _NORMALMAP
+  m_InvalidKeywords:
+  - _EMISSION
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -35,10 +38,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlphaLeak: 1
     - _AmbientReflection: 1
     - _ApplyNormal: 1
+    - _BillboardScale: 2
     - _BumpScale: 1
     - _Cutoff: 0.45
     - _GlossMapScale: 1
@@ -56,3 +61,4 @@ Material:
     - _HueVariation: {r: 0.9, g: 0.5, b: 0, a: 0.101960786}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Translucency: {r: 2, g: 3, b: 0, a: 0}
+  m_BuildTextureStacks: []
