@@ -3,7 +3,32 @@ guid: f5dcccb989504aa4e8af16f52172f7fb
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plaster_white
+    second: {fileID: 2100000, guid: 3a7c79d56179e7542bdfc07d9d7e3a9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: universal_furniture_glass_01a
+    second: {fileID: 2100000, guid: 209115a4d1d8dbb43b70a88f6ed8ebb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: universal_furniture_metal_01a
+    second: {fileID: 2100000, guid: c48d164e857c09e479d59040947b772e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: universal_furniture_metal_01b
+    second: {fileID: 2100000, guid: adc418c5338557f419a3abbe9dfc05ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: universal_furniture_rubber_01a
+    second: {fileID: 2100000, guid: 5eed85bfe1b21314aafdaee96021b18c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
