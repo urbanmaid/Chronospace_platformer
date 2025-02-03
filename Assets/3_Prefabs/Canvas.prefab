@@ -3348,7 +3348,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[E] to get item/activate switch'
+  m_text: "[E]\uD0A4\uB97C \uB20C\uB7EC \uC0C1\uD638\uC791\uC6A9\uC744 \uD558\uC2ED\uC2DC\uC624."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5706d1967bae59a4abe28baa4818cfa5, type: 2}
   m_sharedMaterial: {fileID: 8590031023563184172, guid: 5706d1967bae59a4abe28baa4818cfa5, type: 2}

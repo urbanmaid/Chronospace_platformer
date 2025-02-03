@@ -76,6 +76,9 @@ public class Player : MonoBehaviour, IGravityControl
 
     // 아이템 습득 UI 관련  
     public TextMeshProUGUI interactionText; // interaction 안내 UI 
+    public string interactionTextStringItem = "[E]키로 아이템을 획득하십시오.";
+    public string interactionTextStringSwitch = "[E]키로 장치와의 상호작용을 수행하십시오.";
+
     public GameObject[] equipItems; // 손에 드는 아이템들 
     public bool[] hasItems; // 아이템 가졌는지
     public Item.Type[] inventory; // 가진 아이템 목록
@@ -418,6 +421,7 @@ public class Player : MonoBehaviour, IGravityControl
         {
             if (interactionText != null)
             {
+                interactionText.text = interactionTextStringSwitch;
                 interactionText.enabled = false; // ui 끄기 
             }
             SwitchTrigger targetSwitchScript = nearObject.GetComponent<SwitchTrigger>();
@@ -585,6 +589,23 @@ public class Player : MonoBehaviour, IGravityControl
             camController.ShakeCam();
             StartCoroutine(UIManager.instance.DmgFX());
         }
+        else if (other.CompareTag("Item"))
+        {
+            //UI 켜기
+            if (interactionText != null)
+            {
+                interactionText.text = interactionTextStringItem;
+                interactionText.enabled = true; // ui 끄기 
+            }
+        }
+        else if (other.CompareTag("Switch")) //스위치이면 활성화 준비
+        {
+            if (interactionText != null)
+            {
+                interactionText.text = interactionTextStringSwitch;
+                interactionText.enabled = true; // ui 끄기 
+            }
+        }
 
         /*
         if (other.CompareTag("CheckPoint"))
@@ -602,19 +623,10 @@ public class Player : MonoBehaviour, IGravityControl
     {
         if (other.CompareTag("Item"))
         {
-            //UI 켜기
-            if (interactionText != null)
-            {
-                interactionText.enabled = true; // ui 끄기 
-            }
             nearObject = other.gameObject;
         }
         else if (other.CompareTag("Switch")) //스위치이면 활성화 준비
         {
-            if (interactionText != null)
-            {
-                interactionText.enabled = true; // ui 끄기 
-            }
             nearObject = other.gameObject;
         }
         else if (other.CompareTag("Bullet") && !isInShield) //총알이면 대미지 입기

@@ -1086,6 +1086,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0330b43a6430ec24d9aa1fc6b55ca0a9, type: 3}
+--- !u!1 &117498963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5432789741448986072, guid: a3f1040af8ad95243ad8d199c8bf3b10, type: 3}
+  m_PrefabInstance: {fileID: 800993029}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &135569891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1925,6 +1930,14 @@ PrefabInstance:
       propertyPath: dialogueUIContent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 117498963}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 800993031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
 --- !u!4 &252138016 stripped
@@ -2249,8 +2262,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 800993030}
   battleHUDScreen: {fileID: 800993031}
+  portalInpoText: {fileID: 0}
   fadeImg: {fileID: 800993032}
+  damageFX: {fileID: 0}
   fadeDuration: 1
+  dialogueUI: {fileID: 0}
+  extUI: {fileID: 0}
 --- !u!1001 &337226111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2633,6 +2650,14 @@ PrefabInstance:
       propertyPath: dialogueUIContent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 117498963}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 800993031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
 --- !u!4 &370967499 stripped
@@ -4417,6 +4442,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.45599937
       objectReference: {fileID: 0}
+    - target: {fileID: 1086546278, guid: 9a6c8eb5345187a4586e9bdb34055a05, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1086546279, guid: 9a6c8eb5345187a4586e9bdb34055a05, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.055548668
@@ -4482,8 +4511,16 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5360781343035164253, guid: 9a6c8eb5345187a4586e9bdb34055a05, type: 3}
+      propertyPath: interactionText
+      value: 
+      objectReference: {fileID: 1518038695}
+    - target: {fileID: 5360781343035164253, guid: 9a6c8eb5345187a4586e9bdb34055a05, type: 3}
       propertyPath: textMeshProUGUI
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360781343035164253, guid: 9a6c8eb5345187a4586e9bdb34055a05, type: 3}
+      propertyPath: hasItems.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5360781343035164255, guid: 9a6c8eb5345187a4586e9bdb34055a05, type: 3}
       propertyPath: timerUI
@@ -4764,6 +4801,14 @@ PrefabInstance:
       propertyPath: dialogueUIContent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 117498963}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 800993031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
 --- !u!4 &722322244 stripped
@@ -5339,6 +5384,14 @@ PrefabInstance:
       propertyPath: dialogueUIContent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 117498963}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 800993031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
 --- !u!4 &767981461 stripped
@@ -6517,7 +6570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dedf3291c1c7ef44583dca5b38d391d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointLocation: {x: 0, y: 1.5, z: 0}
+  checkpointPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &966992730 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7527036142517970530, guid: 70c1bf79392394f43b9ed76b07788e0a, type: 3}
@@ -7544,6 +7597,14 @@ PrefabInstance:
       propertyPath: dialogueUIContent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 117498963}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 800993031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
 --- !u!4 &1094190335 stripped
@@ -7643,7 +7704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStageName: Stage1
-  idx: 0
+  lastClearedStageIndex: 0
   spawnCharacterOffset: {x: 0, y: 2, z: 0}
   npcDialogueUI: {fileID: 1863083754}
   isPause: 1
@@ -8644,6 +8705,14 @@ PrefabInstance:
       propertyPath: dialogueUIContent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 117498963}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 800993031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
 --- !u!4 &1240211851 stripped
@@ -9131,6 +9200,14 @@ PrefabInstance:
       propertyPath: dialogueUIContent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 117498963}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 800993031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
 --- !u!4 &1302099037 stripped
@@ -10616,6 +10693,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5432789740282151843, guid: a3f1040af8ad95243ad8d199c8bf3b10, type: 3}
   m_PrefabInstance: {fileID: 800993029}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1518038695 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5432789740282151841, guid: a3f1040af8ad95243ad8d199c8bf3b10, type: 3}
+  m_PrefabInstance: {fileID: 800993029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518038693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1520419244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11837,6 +11925,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2d364c53d6a3f4bb509d9ef431f44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveData:
+    stageNames: []
+    stageClearStatus: 
   path: C:\Users\jumin\Documents\GitHub\new
 --- !u!224 &1640989860
 RectTransform:
@@ -11942,6 +12033,14 @@ PrefabInstance:
       propertyPath: dialogueUIContent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 117498963}
+    - target: {fileID: 1169022194544265653, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
+      propertyPath: excludedUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 800993031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1ae295204de5d4f968d4605a86b0aa, type: 3}
 --- !u!4 &1663376871 stripped
@@ -13617,6 +13716,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2e1ca89534b7d094488b4d95e8a0ee41, type: 3}
   bgmVolume: 0.2
   bgmPlayer: {fileID: 2058688872}
+  fadeDuration: 2
   sfxClips:
   - {fileID: 8300000, guid: 5d757e2a259358d438de39a7db922ab1, type: 3}
   - {fileID: 8300000, guid: ad732945c72da804c9ec346c3308d9ed, type: 3}
